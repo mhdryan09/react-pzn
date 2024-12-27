@@ -1,14 +1,16 @@
 export default function HelloWorld() {
+	const props = {
+		text: "Hello World from Spread Operator",
+	};
 	return (
 		<>
-			<HeaderHelloWorld />
+			<HeaderHelloWorld {...props} />
 			<ParagraphHelloWorld />
 		</>
 	);
 }
 
-function HeaderHelloWorld() {
-	const text = "Hello World";
+function HeaderHelloWorld({ text = "Ups lupa kasih text" }) {
 	return (
 		<h1
 			style={{
