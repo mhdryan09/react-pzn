@@ -6,6 +6,8 @@ import TodoList from "../todolist/TodoList";
 import Table from "../table/Table";
 import AlertButton from "../button/AlertButton";
 import MyButton from "../button/MyButton";
+import Toolbar from "../button/Toolbar";
+import SearchForm from "../form/SearchForm";
 
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
@@ -16,6 +18,15 @@ createRoot(document.getElementById("root")).render(
 
 			<AlertButton text="Click Me" message={"Hello World"} />
 			<MyButton text="Hit Me" onSmash={() => alert("Smashed")} />
+
+			<Toolbar
+				onClick={e => {
+					e.stopPropagation(); // untuk mencegah event bubbling
+					alert("Toolbar clicked");
+				}}
+			/>
+
+			<SearchForm />
 		</Container>
 	</StrictMode>,
 );
